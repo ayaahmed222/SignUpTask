@@ -1,8 +1,14 @@
-import 'package:app/sign_up.dart';
+
+import 'package:app/providor.dart';
+import 'package:app/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+    create: (context)=>SignupStates(),
+    child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(    ),
     debugShowCheckedModeBanner: false,
-    home: SignUp(),
+    home: const SignupScreen(),
     );
   }
 }
